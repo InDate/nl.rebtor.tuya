@@ -1,53 +1,16 @@
 {
-  "id": "Generic_Socket_Device_Power",
+  "id": "Generic_Contact_Alarm",
   "name": {
-	"nl": "Doubele Socket Device met stroommeting",
-	"en": "Double Socket with Powermeter"
+	"en": "Contact Alarm"
   },
-  "class": "socket",
+  "class": "sensor",
   "capabilities": [
-	"onoff",
-	"onoff.soc1",
-	"onoff.soc2",
-	"onoff.lock",
-	"measure_power",
-	"measure_voltage",
-	"measure_current",
+	"alarm_contact",
+	"measure_battery",
+	"alarm_battery",
+	"alarm_tamper",
 	"alarm_connectivity"
   ],
-  "capabilitiesOptions": {
-	"onoff": {
-	  "title": {
-		"en": "Switch all"
-	  },
-	  "greyout": false,
-	  "energy": {
-		"approximation": {
-		  "cumulative": true,
-		  "usageOn": 0.5,
-		  "usageOff": 0.5
-		}
-	  }
-	},
-	"onoff.soc1": {
-	  "title": {
-		"en": "Switch 1"
-	  },
-	  "greyout": false
-	},
-	"onoff.soc2": {
-	  "title": {
-		"en": "Switch 2"
-	  },
-	  "greyout": false
-	},
-	"onoff.lock": {
-		"title": {
-		  "en": "Child Lock"
-		},
-		"greyout": false
-	  }
-},
   "pair": [
     {
       "id": "list_devices",
@@ -98,12 +61,24 @@
 		{
 			"id": "Battery",
 			"type": "checkbox",
-			"value": false,
+			"value": true,
 			"label": {
 				"en": "Battery Powered",
 				"nl": "Battery Powered"
 			}
 		},
+		{
+			"id": "Timeout",
+			"type": "number",
+			"value": 60,
+			"label": {
+			  "en": "Tamper Timeout (minutes)",
+			  "nl": "Tamper Timeout (minutes)"
+			},
+			"min": 1,
+			"max": 60,
+			"step": 1
+		  },
 		{
 		  "id": "ID",
 		  "type": "text",
@@ -143,7 +118,7 @@
 		{
 		  "id": "DeviceTypeCode",
 		  "type": "label",
-		  "value": "cz",
+		  "value": "mcs",
 		  "label": {
 			"en": "DeviceType",
 			"nl": "DeviceType"
@@ -171,7 +146,7 @@
 	}
   ],
   "images": {
-	"large": "/drivers/GENERIC_Socket_Device_Power/assets/images/large.png",
-	"small": "/drivers/GENERIC_Socket_Device_Power/assets/images/small.png"
+	"large": "/drivers/GENERIC_Contact_Alarm/assets/images/large.png",
+	"small": "/drivers/GENERIC_Contact_Alarm/assets/images/small.png"
   }
 }

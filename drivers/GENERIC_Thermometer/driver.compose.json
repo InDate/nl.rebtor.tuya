@@ -1,0 +1,329 @@
+{
+	"id": "Generic_Thermometer",
+	"name": {
+		"en": "Inkbird Thermometer"
+	},
+	"class": "thermostat",
+	"battery": false,
+	"capabilities": [
+		"thermostat_mode",
+		"target_temperature",
+		"measure_temperature",
+		"alarm_heat",
+		"alarm_cold",
+		"alarm_generic.error",
+		"alarm_generic.cool",
+		"alarm_generic.heat"
+	],
+	"capabilitiesOptions": {
+		"target_temperature": {
+			"step": 0.5,
+			"min": -1,
+			"max": 40,
+			"setable": false
+		},
+		"thermostat_mode": {
+			"values": [
+				{
+					"id": "heat",
+					"title": {
+						"en": "Clean",
+						"nl": "Klean"
+					}
+				},
+				{
+					"id": "cool",
+					"title": {
+						"en": "Cool",
+						"nl": "Koelen"
+					}
+				},
+				{
+					"id": "off",
+					"title": {
+						"en": "Off",
+						"nl": "Off"
+					}
+				}
+			]
+		},
+		"alarm_generic.cool": {
+			"title": {
+				"en": "Compressor Active"
+			},
+			"insightsTitleTrue": {
+				"en": "Compressor Turned On"
+			},
+			"insightsTitleFalse": {
+				"en": "Compressor Turned Off"
+			}
+		},
+		"alarm_generic.heat": {
+			"title": {
+				"en": "Water Pump Active"
+			},
+			"insightsTitleTrue": {
+				"en": "Water Pump Turned On"
+			},
+			"insightsTitleFalse": {
+				"en": "Water Pump Turned Off"
+			}
+		},
+		"alarm_generic.error": {
+			"title": {
+				"en": "Device Error"
+			},
+			"insightsTitleTrue": {
+				"en": "Device Error Found"
+			},
+			"insightsTitleFalse": {
+				"en": "Device Error Resolved"
+			}
+		}
+	},
+	"pair": [
+		{
+			"id": "list_devices",
+			"template": "list_devices",
+			"navigation": {
+				"next": "add_devices"
+			},
+			"options": {
+				"singular": true
+			}
+		},
+		{
+			"id": "add_devices",
+			"template": "add_devices"
+		}
+	],
+	"settings": [
+		{
+			"type": "group",
+			"label": {
+				"en": "General settings",
+				"nl": "Algemene instellingen"
+			},
+			"children": [
+				{
+					"id": "DATAATLOG",
+					"type": "textarea",
+					"value": "",
+					"label": {
+						"en": "Data atribute log",
+						"nl": "Data atribute log"
+					}
+				},
+				{
+					"id": "DEBUG_LOG",
+					"type": "textarea",
+					"value": "",
+					"label": {
+						"en": "Debug Log",
+						"nl": "Debug Log"
+					}
+				},
+				{
+					"id": "DEBUG",
+					"type": "checkbox",
+					"value": false,
+					"label": {
+						"en": "Enable Debug",
+						"nl": "Enable Debug"
+					}
+				},
+				{
+					"id": "Battery",
+					"type": "checkbox",
+					"value": false,
+					"label": {
+						"en": "Battery Powered",
+						"nl": "Battery Powered"
+					}
+				},
+				{
+					"id": "ID",
+					"type": "text",
+					"value": "",
+					"label": {
+						"en": "ID",
+						"nl": "ID"
+					}
+				},
+				{
+					"id": "Key",
+					"type": "text",
+					"value": "",
+					"label": {
+						"en": "Key",
+						"nl": "Key"
+					}
+				},
+				{
+					"id": "IP",
+					"type": "text",
+					"value": "",
+					"label": {
+						"en": "IP",
+						"nl": "IP"
+					}
+				},
+				{
+					"id": "Version",
+					"type": "number",
+					"value": 3.3,
+					"label": {
+						"en": "Version",
+						"nl": "Version"
+					}
+				},
+				{
+					"id": "DeviceTypeCode",
+					"type": "label",
+					"value": "wk",
+					"label": {
+						"en": "DeviceType",
+						"nl": "DeviceType"
+					}
+				},
+				{
+					"id": "ProductIDCode",
+					"type": "label",
+					"value": "",
+					"label": {
+						"en": "DeviceType",
+						"nl": "DeviceType"
+					}
+				},
+				{
+					"id": "ModelTypeCode",
+					"type": "label",
+					"value": "",
+					"label": {
+						"en": "ModelType",
+						"nl": "ModelType"
+					}
+				}
+			]
+		},
+		{
+			"type": "group",
+			"label": {
+				"en": "Device settings",
+				"nl": "Algemene instellingen"
+			},
+			"children": [
+				{
+					"id": "temperature_unit",
+					"type": "dropdown",
+					"label": {
+						"en": "Temperature Unit"
+					},
+					"values": [
+						{
+							"id": "C",
+							"label": {
+								"en": "Celsius"
+							}
+						},
+						{
+							"id": "F",
+							"label": {
+								"en": "Fahrenheit"
+							}
+						}
+					],
+					"value": "C"
+				},
+				{
+					"id": "temperature_calibration",
+					"type": "number",
+					"label": {
+						"en": "Temperature Calibration"
+					},
+					"min": -15,
+					"max": 15,
+					"value": 0,
+					"step": 0.5
+				},
+				{
+					"id": "target_temperature",
+					"type": "number",
+					"label": {
+						"en": "Set Chill Temperature"
+					},
+					"min": -6,
+					"max": 40,
+					"value": 4,
+					"step": 0.5
+				},
+				{
+					"id": "compressor_delay",
+					"type": "number",
+					"label": {
+						"en": "Compressor Delay"
+					},
+					"unit": "minutes",
+					"min": 0,
+					"max": 10,
+					"value": 0,
+					"step": 1
+				},
+				{
+					"id": "alarm_high_temperature",
+					"type": "number",
+					"label": {
+						"en": "Alarm High Temperature"
+					},
+					"min": -40,
+					"max": 212,
+					"value": 20,
+					"step": 0.5
+				},
+				{
+					"id": "alarm_low_temperature",
+					"type": "number",
+					"label": {
+						"en": "Alarm Low Temperature"
+					},
+					"min": -40,
+					"max": 212,
+					"value": -5,
+					"step": 0.5
+				},
+				{
+					"id": "heating_hysteresis",
+					"type": "number",
+					"label": {
+						"en": "Heating Hysteresis"
+					},
+					"hint": {
+						"en": "Difference between set temp and current temp before toggling relay"
+					},
+					"min": 0,
+					"max": 300,
+					"value": 0,
+					"step": 0.5
+				},
+				{
+					"id": "cooling_hysteresis",
+					"type": "number",
+					"label": {
+						"en": "Cooling Hysteresis"
+					},
+					"hint": {
+						"en": "Difference between set temp and current temp before toggling relay"
+					},
+					"min": 0,
+					"max": 300,
+					"value": 0,
+					"step": 0.5
+				}
+			]
+		}
+	],
+	"images": {
+		"large": "/drivers/GENERIC_Thermometer/assets/images/large.png",
+		"small": "/drivers/GENERIC_Thermometer/assets/images/small.png"
+	}
+}

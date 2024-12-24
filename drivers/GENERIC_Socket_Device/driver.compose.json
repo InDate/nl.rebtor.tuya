@@ -44,6 +44,33 @@
 		  }
 		},
 		{
+			"id": "DEBUG_LOG",
+			"type": "textarea",
+			"value": "",
+			"label": {
+			  "en": "Debug Log",
+			  "nl": "Debug Log"
+			}
+		  },
+		  {
+			"id": "DEBUG",
+			"type": "checkbox",
+			"value": false,
+			"label": {
+			  "en": "Enable Debug",
+			  "nl": "Enable Debug"
+			}
+		  },
+		  {
+			"id": "Battery",
+			"type": "checkbox",
+			"value": false,
+			"label": {
+			  "en": "Battery Powered",
+			  "nl": "Battery Powered"
+			}
+		  },
+		{
 		  "id": "ID",
 		  "type": "text",
 		  "value": "",
@@ -73,7 +100,7 @@
 		{
 		  "id": "Version",
 		  "type": "number",
-		  "value": 3.1,
+		  "value": 3.3,
 		  "label": {
 			"en": "Version",
 			"nl": "Version"
